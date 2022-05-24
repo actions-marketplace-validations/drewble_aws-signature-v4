@@ -23,7 +23,7 @@ function filterObject(obj) {
   const filtered = {};
   for(const el in obj) {
     if (el !== undefined) {
-      filtered[el] = el;
+      filtered[el] = obj[el];
     }
   }
   return filtered;
