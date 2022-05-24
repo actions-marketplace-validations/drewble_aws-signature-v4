@@ -1,0 +1,25 @@
+{
+  "name": "aws-signature-v4",
+  "version": "1.0.0",
+  "description": "A GitHub Action to faciliate signed AWS requests",
+  "main": "index.js",
+  "scripts": {
+    "test": "locally"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/drewble/aws-signature-v4.git"
+  },
+  "author": "@drewble",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/drewble/aws-signature-v4/issues"
+  },
+  "homepage": "https://github.com/drewble/aws-signature-v4#readme",
+  "dependencies": {
+    "@actions/core": "^1.8.2",
+    "@actions/github": "^5.0.3",
+    "aws4": "^1.11.0",
+    "https": "^1.0.0"
+  }
+}

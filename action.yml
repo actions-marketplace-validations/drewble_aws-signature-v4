@@ -1,0 +1,18 @@
+name: 'AWS Signature v4'
+description: 'Faciliate signed requests to AWS'
+inputs: 
+  aws-access-key-id:
+    description: 'Your AWS Key ID'
+    required: false
+  aws-secret-access-key:
+    description: 'Your AWS Secret Key'
+    required: false
+  aws-session-token:
+    description: 'Your AWS session token'
+    required: false
+  request-options:
+    description: 'aws4 requestOptions object https://github.com/mhart/aws4#aws4signrequestoptions-credentials'
+    required: true
+runs:
+  using: 'node16'
+  main: 'dist/index.js'
