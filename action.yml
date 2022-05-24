@@ -1,5 +1,8 @@
 name: 'AWS Signature v4'
 description: 'Faciliate signed requests to AWS'
+branding:
+  icon: arrow-up-circle
+  color: orange
 inputs: 
   aws-access-key-id:
     description: 'Your AWS Key ID'
