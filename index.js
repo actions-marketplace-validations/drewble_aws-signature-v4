@@ -35,6 +35,8 @@ const headers = filterObject({
   "Date": headersDate
 });
 
+console.log(headers);
+
 const opts = filterObject({
   host,
   path,
@@ -46,11 +48,15 @@ const opts = filterObject({
   signQuery
 });
 
+console.log(opts);
+
 const auth = filterObject({
   accessKeyId,
   secretAccessKey,
   sessionToken
 });
+
+console.log(auth);
 
 aws4.sign(opts, auth)
 https.request(opts, function(res) { res.pipe(process.stdout) }).end(opts.body || '');
