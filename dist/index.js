@@ -9383,7 +9383,7 @@ const {
 function filterObject(obj) {
   const filtered = {};
   for(const el in obj) {
-    if (el !== undefined) {
+    if (obj[el] !== undefined) {
       filtered[el] = obj[el];
     }
   }
