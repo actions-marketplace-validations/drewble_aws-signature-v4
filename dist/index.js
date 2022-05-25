@@ -2596,7 +2596,7 @@ const {
 } = JSON.parse(core.getInput('request-options'));
 
 function isNotEmpty(val) {
-  if (obj[el] !== undefined || obj[el] !== '' ||  obj[el] !== {}) {
+  if (val !== undefined || val !== '' ||  val !== {}) {
     return true;
   }
 
