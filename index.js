@@ -18,18 +18,10 @@ const {
   [`headers['Date']`]: headersDate 
 } = JSON.parse(core.getInput('request-options'));
 
-function isNotEmpty(val) {
-  if (val !== undefined || val !== '' ||  val !== {}) {
-    return true;
-  }
-
-  return false;
-}
-
 function filterObject(obj) {
   const filtered = {};
   for(const el in obj) {
-    if (isNotEmpty(obj[el])) {
+    if (obj[el] !== undefined || obj[el] !== '' ||  obj[el] !== {}) {
       filtered[el] = obj[el];
     }
   }
