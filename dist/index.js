@@ -2613,7 +2613,7 @@ function filterObject(obj) {
   return filtered;
 }
 
-const headers = filterObject({ rawHeaders });
+const headers = filterObject(rawHeaders);
 
 console.log(headers);
 
