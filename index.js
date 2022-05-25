@@ -13,10 +13,10 @@ const {
   service,
   region,
   signQuery,
-  [`headers['Host']`]: headersHost,
-  [`headers['Content-Type']`]:headersContentType,
-  [`headers['Date']`]: headersDate 
+  headers: rawHeaders
 } = JSON.parse(core.getInput('request-options'));
+
+
 
 function isNotEmpty(val) {
   if (val !== undefined && val !== '' &&  Object.keys(val)?.length !== 0) {
@@ -36,11 +36,7 @@ function filterObject(obj) {
   return filtered;
 }
 
-const headers = filterObject({ 
-  "Host": headersHost,
-  "Content-Type": headersContentType,
-  "Date": headersDate
-});
+const headers = filterObject({ rawHeaders });
 
 console.log(headers);
 
