@@ -1,5 +1,4 @@
 const core = require('@actions/core');
-const github = require('@actions/github');
 const aws4 = require('aws4');
 const https = require('https');
 
@@ -19,10 +18,18 @@ const {
   [`headers['Date']`]: headersDate 
 } = JSON.parse(core.getInput('request-options'));
 
+function isNotEmpty(val) {
+  if (obj[el] !== undefined || obj[el] !== '' ||  obj[el] !== {}) {
+    return true;
+  }
+
+  return false;
+}
+
 function filterObject(obj) {
   const filtered = {};
   for(const el in obj) {
-    if (obj[el] !== undefined) {
+    if (isNotEmpty(obj[el])) {
       filtered[el] = obj[el];
     }
   }
