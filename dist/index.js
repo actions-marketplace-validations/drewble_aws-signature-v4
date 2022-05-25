@@ -2643,6 +2643,9 @@ const auth = filterObject({
 console.log(auth);
 
 aws4.sign(opts, auth)
+
+console.log(opts)
+
 https.request(opts, function(res) { res.pipe(process.stdout) }).end(opts.body || '');
 
 })();
