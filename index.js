@@ -13,7 +13,7 @@ const {
   service,
   region,
   signQuery,
-  headers: rawHeaders
+  headers
 } = JSON.parse(core.getInput('request-options'));
 
 
@@ -35,8 +35,6 @@ function filterObject(obj) {
   }
   return filtered;
 }
-
-const headers = filterObject(JSON.parse(rawHeaders));
 
 console.log(headers);
 

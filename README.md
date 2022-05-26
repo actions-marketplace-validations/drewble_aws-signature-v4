@@ -1,4 +1,6 @@
 # AWS Signature v4 action
+*NOT PRODUCTION READY*
+
 This action leverages the awsv4 package to facilitate signed requests to AWS services.
 
 ## Inputs
