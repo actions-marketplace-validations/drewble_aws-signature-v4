@@ -46,7 +46,7 @@ const opts = filterObject({
   region,
   headers,
   method,
-  bodyString: body,
+  body: bodyString,
   signQuery
 });
 
