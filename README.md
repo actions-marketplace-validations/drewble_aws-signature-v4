@@ -1,6 +1,4 @@
 # AWS Signature v4 action
-*NOT PRODUCTION READY*
-
 This action leverages the awsv4 package to facilitate signed requests to AWS services.
 
 ## Inputs
@@ -37,9 +35,24 @@ This is a JSON object containing properties as defined in the [aws4 README](http
 
 ## Example usage
 
+```yaml
 uses: drewble/aws-signature-v4@main
 with:
   aws-access-key-id: ''
   aws-secret-access-key: ''
   aws-session-token: ''
-  request-options: '{"host": "my-bucket.s3.us-west-1.amazonaws.com", "path": "/my-object", "service": "s3", "region": "us-east-1"}' 
+  request-options: |
+    {
+      host: "my-bucket.s3.us-west-1.amazonaws.com",
+      path: "/my-object",
+      service: "s3",
+      region: "us-east-1",
+      body: {
+        abc: "def",
+        ghi: "jkl"
+      }
+      headers: {
+        'Content-Type': "application/json"
+      }
+    } 
+```
