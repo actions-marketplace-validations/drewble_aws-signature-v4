@@ -16,7 +16,8 @@ const {
   headers
 } = JSON.parse(core.getInput('request-options'));
 
-
+// body argument must be string
+const bodyString = JSON.stringify(body);
 
 function isNotEmpty(val) {
   if (val !== undefined && val !== '' &&  Object.keys(val)?.length !== 0) {
@@ -45,7 +46,7 @@ const opts = filterObject({
   region,
   headers,
   method,
-  body,
+  bodyString: body,
   signQuery
 });
 
