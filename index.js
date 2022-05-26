@@ -16,9 +16,6 @@ const {
   headers
 } = JSON.parse(core.getInput('request-options'));
 
-// body argument must be string
-const bodyString = JSON.stringify(body);
-
 function isNotEmpty(val) {
   if (val !== undefined && val !== '' &&  Object.keys(val)?.length !== 0) {
     return true;
@@ -37,7 +34,8 @@ function filterObject(obj) {
   return filtered;
 }
 
-console.log(headers);
+// body argument must be string
+const bodyString = JSON.stringify(body);
 
 const opts = filterObject({
   host,
@@ -50,18 +48,11 @@ const opts = filterObject({
   signQuery
 });
 
-console.log(opts);
-
 const auth = filterObject({
   accessKeyId,
   secretAccessKey,
   sessionToken
 });
 
-console.log(auth);
-
 aws4.sign(opts, auth)
-
-console.log(opts)
-
 https.request(opts, function(res) { res.pipe(process.stdout) }).end(opts.body || '');
